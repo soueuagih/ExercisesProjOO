@@ -72,5 +72,20 @@ public class Main
             return instance;
         }
     }
+     public static void main(String[] args) {
+
+        AppConfig config = AppConfig.getInstance();
+        System.out.println("Aplicação: " + config.appName);
+
+        Notification n1 = NotificationFactory.create("email");
+        n1.send("Olá!");
+
+        Notification n2 = NotificationFactory.create("sms");
+        n2.send("Seu código chegou.");
+
+        Notification n3 = NotificationFactory.create("push");
+        n3.send("Nova notificação disponível!");
+    }
+}
 
 
