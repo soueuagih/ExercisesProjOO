@@ -72,7 +72,22 @@ public class Main
             return instance;
         }
     }
-     public static void main(String[] args) {
+
+
+    //Update no código - aula 10/04/26 - Classe Adaptadora
+    class AdaptaSMS implements Notifies {
+        private SMS smsmessage;
+        
+        AdaptaSMS (SMS smsmessage) {
+            this.smsmessage = smsmessage;
+        }
+
+        public void sendmessage(){
+            smsmessage.send();
+        }
+    }
+
+    public static void main(String[] args) {
 
         AppConfig config = AppConfig.getInstance();
         System.out.println("Aplicação: " + config.appName);
@@ -85,6 +100,14 @@ public class Main
 
         Notification n3 = NotificationFactory.create("push");
         n3.send("Nova notificação disponível!");
+
+        //Update no código - aula 10/04/26 - Proxy
+        Push p = new Push();
+        PushProxy pp;
+        pp = new PushProxy(p);
+
+        View view = new View(pp);
+
     }
 }
 
