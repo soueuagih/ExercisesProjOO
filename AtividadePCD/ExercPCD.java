@@ -20,7 +20,7 @@ class SensorRio {
     private double pressao;
     private float umidrel;
 
-    public void adicionarObserver(Observer o){
+    public void adicionar(Observer o){
         universidades.add(o);
     }
 
@@ -77,6 +77,13 @@ public class Main {
         Universidade uni1 = new Universidade("Unifesp");
         Universidade uni2 = new Universidade("Unicamp");
         Universidade uni3 = new Universidade("USP");
+
+        sens.adicionar(uni1);
+        sens.adicionar(uni2);
+
+        sens.atualizar(25.0, 6.5, 1013.0, 80.0);
+        sens.atualizar(25.0, 6.5, 1013.0, 80.0); 
+        sens.atualizar(26.0, 6.7, 1012.0, 82.0); 
 
     }
 }
