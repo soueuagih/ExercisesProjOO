@@ -1,0 +1,36 @@
+package model;
+
+public class Tree_Species {
+
+    private String species;
+    private String texture;
+    private double shadow;
+    private double width;
+
+    public Tree_Species (String species,
+                    String texture,
+                    double shadow,
+                    double width) {
+
+        this.species = species;
+        this.texture = texture;
+        this.shadow = shadow;
+        this.width = width;
+    }
+
+    public String getSpecies() {
+        return species;
+    }
+
+    public String getTexture() {
+        return texture;
+    }
+
+    public double getShadow() {
+        return shadow;
+    }
+
+    public double getWidth() {
+        return width;
+    }
+}
